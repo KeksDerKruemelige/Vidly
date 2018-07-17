@@ -17,10 +17,19 @@ namespace Vidly.Controllers
             return View(movie);
         }
 
+        // GET: Movies/Edit/1
         public ActionResult Edit(int id)
         {
             return Content("id = " + id);
         }
+               
+        // GET: Movies/ByReleaseDate
+        public ActionResult ByReleaseDate(int year, int month)
+        {
+            return Content(year + "/" + month);
+        }
+
+        [Route("movies/released/{year}/{month:regex(\\d{2}):range(1, 12}")]
 
         // GET: Movies
         public ActionResult Index(int? pageIndex, string sortBy)
